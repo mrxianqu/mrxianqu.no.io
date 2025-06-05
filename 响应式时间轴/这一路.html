@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗的每一页</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            transition: 0.3s ease 0s;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .content-title {
+            font-weight: normal;
+            font-size: 66px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+            font-family: 楷体;
+            font-size: 5mm;
+        }
+
+        .content-gang {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(16, 16, 17, 0.7);
+            line-height: 25px;
+            font-family: 楷体;
+            font-style: italic;
+        }
+
+        .content-gang1 {
+            margin: 0;
+            font-size: 25px;
+            box-sizing: border-box;
+            color: rgba(4, 4, 250, 0.7);
+            line-height: 25px;
+            font-family: 楷体;
+            font-style: italic;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+
+        .item:before {
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .footer {
+            padding: 95px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+      
+    <div class="shell" id="shell">
+        <div class="header">
+            <h2 class="title">这一路走来真不容易</h2>
+            <h3 class="subtitle">HAPPY BRITHDAY</h3>
+        </div>
+     
+        <div class="timeline">
+            <div class="item" data-text="二零零三，卧龙出山">
+                <div class="content">
+                    <img src="./img/27.jpg" alt="" class="img">
+                    <h2 class="content-title">2003</h2>
+                    <p class="content-desc">
+                        “看见了......我都看见了，零三年的冬天，有一条真龙盘旋在空中,
+                        降临人间。”
+                    </p>
+                    <p class ="content-gang">
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                                                                                          
+                    ---------来自村民的回忆
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="二零零五，凤雏伴舞">
+                <div class="content">
+                    <img src="./img/28.jpg" alt="" class="img">
+                    <h2 class="content-title">2005</h2>
+                    <p class="content-desc">
+                        “卧龙凤雏，二者得一可安天下”
+                    </p>
+                    <p class ="content-gang">
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                                                                                           
+                        ---------水镜先生曾预言到
+                        </p>
+
+                </div>
+            </div>
+
+            <div class="item" data-text="凯瑞翡翠，王之故土">
+                <div class="content">
+                    <img src="./img/30.jpg" alt="" class="img">
+                    <h2 class="content-title">2011</h2>
+                    <p class="content-desc">
+                        “这是勇者成长的地方”<br>路过的旅人翻着古书上的记载，当他踏入这片土地时，一段段古老的故事涌出。<br>
+                        “天生六指的徐文涛、早期点子王徐辉、马戏团团长叶智豪、被枣重伤过的李锦辉、老早失联的章成、隔壁家的小弟吴须强、
+                        后来的三人组邱泽伦、自杀式跳楼的章智赫、品学兼优的黄浩楠......”
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="爱与恨交织之地">
+                <div class="content">
+                    <img src="./img/26.jpg" alt="" class="img">
+                    <h2 class="content-title">2016</h2>
+                    <p class="content-desc">
+                        “这里———就在这里！勇者曾收获过无比的快乐，也遭遇了非人的磨难。这段时光，是少年青春最盛时，也正是青春正盛
+                        少年的爱与恨棱角分明，爱得痛彻心扉，恨得刻骨铭心。
+                        渐渐的少年成长了，渐渐的少年明白了。
+                        恨之所以有力，是因为恨如根，会深深扎入人心；爱之所以温暖，是因为爱如雨，会默默浸润人心。
+                        雨水会滋养根的繁茂，爱意也会滋养恨。我们很难根除恨，但我们可以从开始就阻止恨的扎根。”
+                    </p>
+
+                    <p class ="content-gang">
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                                                                                           
+                        ---------石碑上镌刻的文字
+                        </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="我所怀念的">
+                <div class="content">
+                    <img src="./img/5.jpg" alt="" class="img">
+                    <h2 class="content-title">2019</h2>
+                    <p class="content-desc">
+                       “大家要珍惜高中这三年，因为高中这三年的时光，很有可能成为你人生中最怀念的时光；高中三年的同学，更可能是你未来一直联系的朋友”
+                     时至今日，我对海森说的这段话有着深刻的印象。我记不清那节课是怎样过去的，
+                     也记不清那一天是怎样过去的。只记得，教室很安静，周围的人都不说话。向窗外看去，天蓝蓝的，云朵恰到好处的点缀着。
+                     <br>“高中三年是什么样的呢”
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="疫情无法侵蚀我们的热情">
+                <div class="content">
+                    <img src="./img/29.jpg" alt="" class="img">
+                    <h2 class="content-title">2020</h2>
+                    <p class="content-desc">
+                        这是高中的第一个暑假，也是疫情暂时放开的第一个暑假。<br>
+                        “新冠病毒？让他见鬼去吧！”<br>
+                        在豪言壮语下，我们出发了。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="三个好汉点子多">
+                <div class="content">
+                    <img src="./img/3.jpg" alt="" class="img">
+                    <h2 class="content-title">2022</h2>
+                    <p class="content-desc">
+                       三人组高考后的集结，三个自律的男人以全新姿态出击，从此结下疯狂星期四情节！<br>
+                       有些画面看上去只有两个人，其实有三个人。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="湘见恨晚">
+                <div class="content">
+                    <img src="./img/2.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <p class="content-desc">
+                        那个男人曾经说过：“父兵诛卓起长沙，直取江东做帝家。”勇者反其道而行之，从江东出击，来到这座久负盛名的长沙古城。
+                        臭豆腐！游乐园？夏日正盛，恰同学少年；深夜畅言，忆往昔峥嵘岁月稠！
+                    </p>
+                </div>
+            </div>
+
+
+        
+
+            <div class="item" data-text="大雪毁了爷的武汉梦">
+                <div class="content">
+                    <img src="./img/23我在南昌.jpg" alt="" class="img">
+                    <h2 class="content-title">2024</h2>
+                    <p class="content-desc">
+                        寒意渐浓，人心愈暖。两度拜访、四天行程、一次漫展......这次的经历较以往又有许多不同。
+                    </p>
+                    
+                </div>
+            </div>
+
+            <div class="item" data-text="故事未完待续">
+                <div class="content">
+                    <img src="./img/25.jpg" alt="" class="img">
+                    <h2 class="content-title">未&nbsp来</h2>
+                    <p class="content-desc">
+                        如果你现在停止，这里就是尽头。如果你还在继续，将看到世界的壮阔！<br>
+                        故事尚未结束，这一路上不容易。未来，新的身份、新的城市、新的人生阶段......时间似乎永远在催促我们不断改变，
+                        但我坚信我们的友谊,
+                    </p>
+                    <p class ="content-gang1">
+                    永不改变！！
+                        </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".img"
+                };
+                // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+                // 获取时间轴项目的总数
+                var itemLength = selectors.item.length;
+                // 当页面滚动时，触发滚动事件
+                $(window).scroll(function () {
+                    var max, min;
+                    // 获取页面滚动的距离
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function (i) {
+                        // 获取当前时间轴项目的最小和最大高度
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                        // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+                        // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                        // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                        else if (pos <= max - 10 && pos >= min) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+                });
+            };
+        })(jQuery)
+        /*
+        最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+        这将启用时间轴插件并为该时间轴绑定滚动事件。
+        */
+       $("#shell").timeline();
+
+
+    </script>
+</body>
+
+</html>

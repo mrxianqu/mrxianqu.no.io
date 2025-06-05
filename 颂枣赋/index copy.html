@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颂枣赋</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .shell {
+            display: flex;
+            flex-direction: column;
+            width: 90vw;
+            height: 90vh;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+            background-color: #fff;
+            color: #000;
+            overflow: hidden;
+        }
+
+        .ocean {
+            width: 100%;
+            height: 60%;
+            background-color: blue;
+            background-image: url(./images/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ocean-text {
+            font: 900 35vh '';
+            position: relative;
+            background-image: url(./images/text.jpg);
+            background-size: 160% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transform: translate(25%, -5%);
+            -webkit-text-stroke: 5px #ffffff;
+           
+        }
+
+        .content {
+            position: relative;
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main {
+            width: 300%;
+            height: 35vh;
+            position: relative;
+            display: flex;
+            left: 0;
+            transition: .3s;
+        }
+
+        .box {
+            width: 100vw;
+            height: 100%;
+            position: relative;
+        }
+
+        .page {
+            position: absolute;
+            color: #fff;
+            left: 150px;
+            top: -80px;
+        }
+
+        .page h2 {
+            font: 900 120px '';
+            color: #29519b;
+        }
+
+        .page span {
+            font: 400 30px '';
+            position: absolute;
+            right: -55px;
+            top: 30px;
+            color: rgb(134, 194, 250);
+        }
+
+        .bbspan {
+            display: block;
+            font: 500 40px '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-55%);
+            left: 150px;
+        }
+
+        .box h3 {
+            position: absolute;
+            right: 180px;
+            top: 50%;
+            font: 100 19px '';
+            transform: translateY(-50%);
+        }
+
+        .left {
+            width: 40px;
+            height: 40px;
+            background-image: url("./images/left.png");
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 2%;
+            transform: translateY(-50%);
+            z-index: 999;
+            opacity: 0.5;
+        }
+
+        .right {
+            width: 40px;
+            height: 40px;
+            background-image: url("./images/right.png");
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            right: 2%;
+            transform: translateY(-50%);
+            z-index: 999;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 120px;
+        }
+
+        h1 {
+            color: #29519b;
+            font-family: 楷体;
+        }
+
+        .article {
+            width: 40%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 120px;
+            font-family: 华文隶书;
+            font-size: large;
+        }
+
+        .article h2 {
+            margin-bottom: 10px;
+            font-size: 30px;
+            color: #29519b;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="shell">
+        <div class="ocean">
+            <div class="ocean-text">颂枣赋</div>
+        </div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="main">
+                <div class="box">
+                    <div class="page">
+                        <h2> 01</h2>
+                        <span> / 03</span>
+                    </div>
+                    <div class="title">
+                       
+                        <h1> 贺友枣贰拾贰岁诞辰</h1>
+                        
+                    </div>
+                    <div class="article">
+                        <p> &nbsp&nbsp&nbsp&nbsp岁序更新，吉日良辰，值此君生辰之际，吾心甚喜，特书此文以贺。
+                            春风化雨，润物无声，愿君之年华，亦如春日之花，绚烂不妖，清雅脱俗。<br>
+                            <br>
+                            &nbsp&nbsp&nbsp&nbsp 君才情出众，品德高洁，譬如青松之挺拔，劲竹之坚韧；
+                                又若寒梅之忠贞，‘幽兰之高洁。
+                               宽而栗、柔而立、愿而恭、乱而敬、扰而毅、
+                               直而温、简而廉、刚而实、强而义、彰厥有常，令人仰止!</p>   
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="page">
+                        <h2> 02</h2>
+                        <span> / 03</span>
+                    </div>
+                    <div class="title">
+                        <h1> 贺友枣贰拾贰岁诞辰</h1>
+                    </div>
+                    <div class="article">
+                        <p>&nbsp&nbsp&nbsp&nbsp雁来酷暑，潭州星城。困览坡子街，懒游文和友。
+                        橘子洲头，共见伟人；惜别岳麓[1]，深夜畅谈。
+                        倾陆海、洒潘江，不觉困意，盖陈郎之才气，引人入胜！<br>
+                        <br>
+                       
+                        &nbsp &nbsp&nbsp&nbsp柳月大寒，豫章洪都。信步中山路，悄入万寿宫。
+                        满目琳琅，博览古今；共品佳肴，同饮香茗[2]。
+                        风萧瑟、露凝霜，未感寒意。此枣君之热忱，如沐春风! </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="page">
+                        <h2> 03</h2>
+                        <span> / 03</span>
+                    </div>
+                    <div class="title">
+                        <h1> 贺友枣贰拾贰岁诞辰</h1>
+                    </div>
+                    <div class="article">
+                       
+                        <p>&nbsp&nbsp&nbsp&nbsp诚愿君此生，幸福安康，事事顺心，梦想成真。
+                            岁岁年年，其皆如今日之欢愉。吾心岂能不说[3]哉！
+                            朝朝暮暮，其亦似此刻之开怀。吾心岂能不安哉！<br><br>
+                           
+                            &nbsp&nbsp&nbsp&nbsp芜湖！愿斯情之永固兮，乐终古而未央！<br><br>
+                        [1]惜别：癸卯年八月，众议登岳麓山。深夜畅谈，不能起，遂止。<br><br>
+        [2]香茗：古茗也是茗！！<br><br>
+        [3]说：其实是“悦”，装杯用通假，如何。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const left = document.querySelector(".left")
+    const right = document.querySelector(".right")
+    const main = document.querySelector(".main")
+    var index = 0
+    function add() {
+        if (index < 1) {
+            index = 2
+        } else {
+            index--
+        }
+    }
+    function desc() {
+        if (index > 1) {
+            index = 0
+        } else {
+            index++
+        }
+    }
+    function position() {
+        main.style.left = (index * -100) + "%" 
+    }
+    left.addEventListener("click", () => {
+        add()
+        position()
+        console.log(index)
+    }) 
+    right.addEventListener("click", () => {
+        desc()
+        position()
+        console.log(index)
+    }) 
+
+</script>
+
+</html>

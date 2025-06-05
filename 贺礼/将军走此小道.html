@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>此道岂不美哉</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+
+       
+        .shell{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .page{
+            transform: translateX(-110%);
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transition: .5s;
+            background-size: cover;
+        }
+        .button{
+            display: block;
+            width: 10%;
+            color: #fff;
+            font-size: 30px;
+            border-bottom: #fff solid 4px;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            margin: 50px;
+            left: calc(50% + (var(--i)*17%));
+            z-index: 999;
+            transition: .3s;
+            font-family: 楷体;
+        }
+        .page_content{
+            box-sizing: border-box;
+            height: 100%;
+            padding: 50px;
+            color: #FFF;
+            position: absolute;
+            left: 100%;
+            display: none;
+            animation-name: fade;
+            animation-duration: .7s;
+            animation-iteration-count: 1;
+            opacity: 1;
+            
+        }
+        @keyframes fade{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        input{
+            display: none;
+        }
+        input:checked+.page{
+            transform: translateX(0px);
+            transition: .4s;
+        }
+        input:checked+.page .page_content{
+            width: 100%;
+            display: block;
+        }
+        .page:nth-child(3){
+            background-image: url('./4.jpg');
+        }
+        .page:nth-child(3) .page_content{
+            background-color: rgb(185,130,130);
+        }
+
+        .page:nth-child(6){
+            background-image: url('./5.jpg');
+        }
+        .page:nth-child(6) .page_content{
+            background-color: rgb(173,170,226);
+        }
+
+        .page:nth-child(9){
+            background-image: url('./6.jpg');
+        }
+        .page:nth-child(9) .page_content{
+            background-color: rgb(236,180,110);
+        }
+        .page h1{
+            font-size: 70px;
+            font-family: 楷体;
+        }
+        .page p{
+            font-size: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, .3);
+            border-radius: 10px;
+            margin: 30px 0;
+            font-family: 楷体;
+        }
+        .page span{
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: rgb(56, 56, 56);
+            font-family: 华文行楷;
+        }
+        label:hover{
+            cursor: pointer;
+            border-bottom: solid 4px rgb(35, 35, 35);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <label for="button1" class="button" style="--i:0">起笔</label>
+        <input type="radio" id="button1" name="page" checked>
+        <div class="page">
+            <div class="page_content">
+                <h1>起笔</h1>
+                <p>结交在相知，骨肉何必亲&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp —————&nbsp&nbsp曹植</p>
+                <span>
+                    一个人真正的魅力，不是你给对方留下了美好的第一印象；<br>
+                    而是对方认识你多年后，仍喜欢和你在一起。<br>
+                    也不是你瞬间吸引了对方的目光；<br>
+                    而是对方熟悉你以后，依然欣赏你。<br>
+                    更不是初次见面后，就有相见恨晚的感觉；<br>
+                    而是历尽沧桑后，由衷倾诉说：<br>
+                    认识你真好！<br>
+                    <br>
+                    认识你真好，虽然你不在我身边，却一直在心间。<br>
+                    有一种目光不远不近，却一直守望；<br>
+                    有一种朋友不惊不扰，却一直陪同。<br>
+                    最深沉的爱总是无声，最长久的情总是平淡。<br>
+                    每个人心里，都有一道最美丽的风景。<br>
+                    距离，让思念生出美丽；<br>
+                    懂得，让心灵有了皈依。<br>
+                    人生最幸福的事，莫过于认识你，有你暖暖的住在心底。<br>
+                </span>
+            </div>
+        </div>
+
+
+        <label for="button2" class="button" style="--i:1">文中</label>
+        <input type="radio" id="button2" name="page">
+        <div class="page">
+            <div class="page_content">
+                <h1>文中</h1>
+                <p>相知无远近，万里尚为邻。&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp —————&nbsp&nbsp王之涣</p>
+                <span> 认识你真好，这么多年后，我一回头，你还在。<br>
+                    我喜欢那么一种友情：<br>
+                    不是那么多，不是那么浓烈，不是那么甘甜，也不是那么时时刻刻，甚至有时候会用年、十年、半个世纪去给它计时，它是那么少，那么真，那么久长。<br>
+                    若悲伤有人分担，又何尝不是一种慰藉；<br>
+                    若孤单有人陪伴，又何时何处不是心暖、心安。<br>
+                    最真的感情永远都是：<br>
+                    死皮赖脸中破涕为笑，心甘情愿中不厌其烦。<br>
+                    有些人，走着走着就进了心里，恰似故友；<br>
+                    有些人，走着走着就淡出视线，难以交心；<br>
+                    有些情，于岁月中，慢慢消融，不再刻骨铭心；<br>
+                    有些人，于相交中，慢慢远离，好像无影无踪；<br>
+                    有些事，于时光中，慢慢淡定，从此不再动心。<br>
+                    所以，人与人之间的相遇靠缘分，心与心相知靠真诚；<br>
+                    人生若有二三好友，无话不谈，不离不弃，可谓幸运……<br>
+                    认识你真好，<br>
+                    因为认识了你，我也愿意变成更好的自己。
+                </span>
+            </div>
+        </div>
+
+
+        <label for="button3" class="button" style="--i:2">落笔</label>
+        <input type="radio" id="button3" name="page">
+        <div class="page">
+            <div class="page_content">
+                <h1>落笔</h1>
+                <p>人生得一知己足矣，斯世当以同怀视之。&nbsp&nbsp&nbsp —————&nbsp&nbsp鲁迅</p>
+                <span>其实我们都不需要太多，<br>孤单时有人陪，无助时有人帮，<br>于心灵是一种温暖，于生命是一种感动。<br>
+                    因为有你，我们彼此携手前进，遇见更出色的自己。<br>
+                    彼岸的守望，是此岸的感动；<br>
+                    千里的陪同，是心中的丰盈。<br>
+                    最深沉的爱，总是风雨兼程；<br>
+                    最浓厚的情，总是冷暖与共。<br>
+                    一份好的感情，是两心相依的温暖，是相濡以沫的陪伴。<br>
+                    最真的拥有，是我在；最美的感情，是我懂。<br>
+                    此生四季冷暖，有人叮咛你加衣；<br>
+                    生活劳碌，有人嘱咐你休息，足矣。<br>
+                    认识你真好，此生，多谢有你！<br>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
